@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>header}}
+  </head>
+  <body>
+    {{!-- navbar --}}
+     {{>navbar}}
+    <!-- main header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- left side div -->
+                    <div class="col-md-12 col-12 main_header_left align-items-center">
+                        <figure>
+                            <img src="https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?fit=845%2C503&ssl=1" alt="arshnoor" class="img-fluid" style="height: 300px;">
+                        </figure>
+                        <p>Welcome to error page</p>
+                        <h1>{{errmsg}}</h1>
+                        <a href="www.google.com"><button>GO Back</button></a>
+                    </div>
+                     <!-- right side div -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer code -->
+   {{>footer}}
+  </body>
+</html>

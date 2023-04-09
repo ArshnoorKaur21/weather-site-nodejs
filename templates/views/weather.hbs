@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>header}}
+  </head>
+  <body>
+    {{!-- navbar --}}
+    {{>navbar}}
+    <!-- main header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main-content">
+                    <form class="temp_form">
+                        <input type="text" id="cityname" placeholder="Enter your city name" autocomplete="off">
+                        <input type="submit" value="search" id="submitbtn">
+                    </form>
+                </div>
+
+                <div class="tempinformation">
+                    <div class="top_layer">
+                        <p id="day">Tuesday</p>
+                        <p id="today_data">13 oct</p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">Get Output</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
+                            <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer code -->
+   {{>footer}}
+   <script src="js/main.js"></script>
+   <script>
+    const getcurrentday=()=>{
+        var arr=new Array(7);
+        arr[0]="Sunday";
+        arr[1]="Monday";
+        arr[2]="Tuesday";
+        arr[3]="Wednesday";
+        arr[4]="Thursday";
+        arr[5]="Friday";
+        arr[6]="Saturday";
+        let currentdate=new Date();
+        let days=arr[currentdate.getDay()];
+        let day=document.getElementById('day')
+        day.innerText=days
+       
+
+    }
+    getcurrentday();
+    let today_data=document.getElementById('today_data')
+    const getcurrentdate=()=>{
+        let currentdate=new Date();
+        let date=currentdate.getDate()
+        console.log(date)
+        var months=["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"]
+        let month=months[currentdate.getMonth()];
+        return `${date} ${month}`
+    }
+    today_data.innerText=getcurrentdate();
+   </script>
+  </body>
+</html>
